@@ -1,0 +1,34 @@
+body {
+  background: $c-back;
+}
+
+.outer-wrapper2 {
+  max-width: 1180px;
+  min-width: 920px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.wrapper-small {
+  //max-width: 980px;
+  //min-width: 920px;
+  max-width: 1180px;
+  min-width: 920px;
+  margin: 0 auto;
+  padding: 0 10px;
+  position: relative;
+}
+
+.col1 {
+  width: 75%;
+  float: left;
+}
+.col2 {
+  width: 25%;
+  float: left;
+}
+
+.content2 {
+  padding: 40px 0 30px;
+  background: $c-back;
+}

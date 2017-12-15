@@ -1,0 +1,128 @@
+.step-line {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  padding-top: 26px;
+  height: 100px;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin: -2px 0 0 1%;
+    width: 98%;
+    height: 4px;
+    background: url('/web/img/rastr/step-line-backgraund.png') repeat-x;
+  }
+}
+.s-l__item {
+  display: inline-block;
+  position: relative;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  border: 2px solid #898989;
+  background: #fff;
+  vertical-align: middle;
+  font: 13px/15px $fira-regular;
+  color: #898989;
+  margin-right: 80px;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 12px;
+    height: 12px;
+    background: #898989;
+    border-radius: 50%;
+  }
+
+  &:nth-of-type(even) {
+    span {
+      position: absolute;
+      top: 35px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+  &:nth-of-type(odd) {
+    span {
+      position: absolute;
+      bottom: 35px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+  &:first-of-type {
+    span {
+      bottom: 50px;
+    }
+  }
+  &:last-of-type {
+    margin-right: 0;
+    span {
+      bottom: 50px;
+    }
+    &:nth-of-type(even) {
+      span {
+        bottom: auto;
+        top: 50px;
+      }
+    }
+  }
+
+
+  span {
+    display: inline-block;
+    width: 150px;
+  }
+
+  &_big {
+    width: 48px;
+    height: 48px;
+    &:before {
+      top: 12px;
+      left: 12px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &_filled {
+    border: 2px solid $c-main;
+    color: $c-main;
+    cursor: pointer;
+    &:before {
+      background: $c-main;
+    }
+  }
+  &_active {
+    color: $c-second;
+    border-color: #fff;
+    &:before {
+      background: #fff;
+      box-shadow: 0 0 18px 10px $c-second;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: 26px;
+      height: 26px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+    }
+  }
+}
+
+// slider
+.step-line-slider {
+
+}
+.s-l-wrap {
+  font-size: 0;
+}

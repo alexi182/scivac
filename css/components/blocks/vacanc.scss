@@ -1,0 +1,176 @@
+.card-table {
+  width: 100%;
+  text-align: left;
+  font: 14px/1 $fira-regular;
+  color: #000;
+  background: #fff;
+  box-shadow: $shadow;
+  thead tr {
+    th {
+      &:nth-of-type(1) {
+        text-align: center;
+      }
+
+    }
+  }
+  th {
+    color: $c-main;
+    border-bottom: 2px solid #eee;
+    padding: 15px 0;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+  td {
+    vertical-align: middle;
+    padding: 15px 0;
+    border-bottom: 2px solid #eee;
+  }
+  tbody tr {
+    td {
+      &:nth-of-type(1) {
+        text-align: center;
+      }
+      &:last-of-type {
+        text-align: justify;
+        padding: 0 5px;
+        a {
+          display: inline-block;
+          position: relative;
+          top: 8px;
+        }
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 100%;
+        }
+      }
+    }
+    &:last-of-type {
+      td {
+        border: 0;
+      }
+    }
+  }
+  &_notice {
+    td {
+      font:14px $fira-regular;
+
+    }
+    tbody {
+      tr {
+        td {
+          &:last-of-type {
+            text-align: center;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.sort-tri {
+  display: inline-block;
+  vertical-align: middle;
+  //height: 13px;
+  &:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+  }
+
+  &_default {
+    &:before {
+      border: 6px solid transparent;
+      border-top: 9px solid #cecece;
+    }
+  }
+  &_down {
+    &:before {
+      border: 6px solid transparent;
+      border-bottom: 9px solid #388824;
+    }
+  }
+  &_up {
+    &:before {
+      border: 6px solid transparent;
+      border-top: 9px solid #ca3232;
+    }
+  }
+}
+
+.vacanc {
+  &__action {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    color: $c-main;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    border: 2px solid $c-main;
+    font-size: 0;
+    &:before {
+      content: '';
+      height: 100%;
+      display: inline-block;
+      width: 0;
+      vertical-align: middle;
+    }
+    svg {
+      fill: $c-main;
+      vertical-align: middle;
+      @include transition(200);
+    }
+    &:hover {
+      &.vacanc__action_watch {
+        svg {
+          fill: $c-second;
+        }
+      }
+      &.vacanc__action_edit {
+        svg {
+          fill: #00b7e8;
+        }
+      }
+      &.vacanc__action_delete {
+        svg {
+          fill: #c50600;
+        }
+      }
+      &.vacanc__action_cancel {
+        svg {
+          fill: #ce8100;
+        }
+      }
+
+    }
+  }
+  &__viners {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    color: $c-main;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    border: 2px solid $c-main;
+    margin-right: 10px;
+  }
+}
+
+.add-vacanc-btn-row {
+  text-align: right;
+}
+
+.vacanc-controls-row {
+  text-align: right;
+  margin: 10px 0 -20px;
+}
+
+
+

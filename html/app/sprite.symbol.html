@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>
+		<script>svg4everybody();</script>
+		<title>SVG &lt;symbol&gt; sprite preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+		
+<!--
+	
+Sprite shape dimensions
+====================================================================================================
+You will need to set the sprite shape dimensions via CSS when you use them as inline SVG, otherwise
+they would become a huge 100% in size. You may use the following dimension classes for doing so.
+They might well be outsourced to an external stylesheet of course.
+
+-->
+
+<style type="text/css">
+	.svg-2781-dims { width: 23.96px; height: 21.35px; }
+	.svg-2834-dims { width: 14px; height: 24px; }
+	.svg-2850-dims { width: 24px; height: 23.977px; }
+	.svg-2905-dims { width: 24px; height: 23.67px; }
+	.svg-2961-dims { width: 24.002px; height: 23.705px; }
+	.svg-2964-dims { width: 24px; height: 23.52px; }
+	.svg-apply-dims { width: 26px; height: 26px; }
+	.svg-arrow-expand-dims { width: 23px; height: 6.026px; }
+	.svg-camera-foto-dims { width: 24px; height: 24px; }
+	.svg-cecutient-dims { width: 36.39px; height: 25.752px; }
+	.svg-edit-cross-dims { width: 11.302px; height: 11.302px; }
+	.svg-edit-eye-dims { width: 12.833px; height: 8.556px; }
+	.svg-edit-pen-dims { width: 13.645px; height: 13.899px; }
+	.svg-edit-trash-dims { width: 10.139px; height: 12.167px; }
+	.svg-favorites-dims { width: 26.0005379px; height: 26px; }
+	.svg-geolocation-dims { width: 24px; height: 24px; }
+	.svg-organization-dims { width: 25.021px; height: 26.917px; }
+	.svg-pie-electrons-dims { width: 30.003px; height: 29.413px; }
+	.svg-pie-happy-dims { width: 24px; height: 24px; }
+	.svg-pie-normal-dims { width: 24px; height: 24px; }
+	.svg-pie-rouble-dims { width: 24px; height: 24px; }
+	.svg-pie-sad-dims { width: 24px; height: 24px; }
+	.svg-pie-shield-dims { width: 19.842px; height: 23.089px; }
+	.svg-slide-left-dims { width: 7.7px; height: 13.3px; }
+	.svg-slide-right-dims { width: 7.7px; height: 13.3px; }
+	.svg-student-dims { width: 19.063px; height: 21.951px; }
+	.svg-upload-list__remove-btn-dims { width: 15.052px; height: 15.052px; }
+</style>
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+	
+<!--
+	
+Inline <symbol> SVG sprite
+====================================================================================================
+This is an inlined version of the generated SVG sprite. The single images may be <use>d everywhere
+below within this document. Please see
+
+	https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#defs--symbol-mode
+
+for further details on how to create this embeddable sprite variant.
+
+-->
+
+<svg width="0" height="0" style="position:absolute">
+		<symbol viewBox="0 0 23.96 21.35" id="2781"><path d="M22.02 1.94a6.626 6.626 0 0 0-9.37 0 6.75 6.75 0 0 0-.67.795 6.74 6.74 0 0 0-.669-.795 6.626 6.626 0 0 0-9.37 9.37l8.701 8.701 1.338 1.339 1.339-1.339 8.701-8.701a6.626 6.626 0 0 0 0-9.37zM11.98 18.517S3.926 9.843 3.306 9.843h5.168l1.5-2.219 4 5.258 2-3.039h4.68c-.619.001-8.674 8.674-8.674 8.674zm9.429-9.673h-5.935l-1.5 2.375-4-5.336-2 2.961H2.551c-1.056-2-.824-4.088.727-5.643 1.85-1.848 4.846-1.808 6.693.04.442.441 2.008 2.027 2.008 2.027s1.566-1.556 2.008-1.998c1.849-1.848 4.846-1.921 6.693-.074 1.553 1.554 1.784 3.648.729 5.648z"/></symbol>
+		<symbol viewBox="0 0 14 24" id="2834"><path d="M9 7a2 2 0 1 0-4.001.001A2 2 0 0 0 9 7zM6 7a1 1 0 1 1 2 0 1 1 0 1 1-2 0z"/><path d="M8 16.687v-2.964A1.99 1.99 0 0 0 9 12v-.169l.12.12a2.001 2.001 0 0 0 2.83-2.83L11.829 9H12a2 2 0 0 0 0-4h-.172l.121-.121a2 2 0 0 0-2.828-2.828L9 2.172V2a2 2 0 1 0-4 .001v.172l-.122-.122a1.998 1.998 0 0 0-2.826-.002 2.001 2.001 0 0 0-.001 2.831l.12.12H2a2 2 0 0 0 0 4h.171l-.121.121a2 2 0 1 0 2.829 2.828L5 11.828V12a1.99 1.99 0 0 0 1 1.723v2.964A5.99 5.99 0 0 0 1 14H0v4a6 6 0 0 0 6 6h2a6 6 0 0 0 6-6v-4h-1a5.99 5.99 0 0 0-5 2.687zm-3.021-6.252l-.808.808a1 1 0 1 1-1.415-1.414l.809-.809A3.93 3.93 0 0 1 3.142 8H2a1 1 0 1 1 0-2h1.142a3.94 3.94 0 0 1 .424-1.021l-.807-.807a1 1 0 1 1 1.412-1.414l.809.809A3.907 3.907 0 0 1 6 3.142V2.001A1.001 1.001 0 0 1 8 2v1.142c.363.093.704.238 1.02.423l.808-.808a1 1 0 1 1 1.414 1.414l-.808.808c.186.317.331.658.424 1.021H12a1 1 0 1 1 0 2h-1.142a3.912 3.912 0 0 1-.424 1.019l.809.809a.999.999 0 0 1 0 1.414.996.996 0 0 1-1.414 0l-.809-.808a3.94 3.94 0 0 1-1.02.424V12a1 1 0 1 1-2 0v-1.142a3.987 3.987 0 0 1-1.021-.423zM6 23a5 5 0 0 1-5-5v-3a5 5 0 0 1 5 5v3zm7-5a5 5 0 0 1-5 5v-3a5 5 0 0 1 5-5v3z"/></symbol>
+		<symbol viewBox="0 0 24 23.977" id="2850"><path d="M19.207 10.511c1.238-1.1 2.139-2.699 2.139-4.484C21.345 2.713 18.716 0 15.403 0c-2.974 0-5.378 1.977-5.853 4.977h.002c-.031 0-.06.023-.091.023-3.314 0-6 2.7-6 6.013 0 1.785.555 3.392 1.793 4.491C3.451 15.942 2 17.068 0 19.027v4c0 .553.908.95 1.461.95h16c.553 0 .539-.398.539-.95v-4.05h5.461c.553 0 .539-.398.539-.95v-4c-1-1.98-2.99-3.078-4.793-3.516zm-3.746-8.484c2.209 0 4 1.791 4 4s-1.975 4-4.184 4a8.09 8.09 0 0 1-.276-.01v.002c0-2.14-1.67-3.891-3.66-4.62.301-1.909 2.125-3.372 4.12-3.372zm-10 9a4 4 0 1 1 8 0 4 4 0 0 1-8 0zM16 21.977H2v-1.95s2-3 7-3 7 3 7 3v1.95zm6-5h-5.463c-.982-1-2.037-1.2-3.1-1.458 1.01-.896 1.709-2.542 1.935-3.542h-.002.09c5 0 6.539 3.05 6.539 3.05v1.95z"/></symbol>
+		<symbol viewBox="0 0 24 23.67" id="2905"><path d="M22.76 10.67H22V4.833c0-.553-.687-1.163-1.24-1.163h-7.618L16.081.812c.194-.195.265-.28-.058-.602-.311-.31-.568-.195-.764-.001l-3.52 3.461h-.002L8.228.243C8.033.05 7.674-.14 7.389.145c-.285.285-.221.42-.026.614l2.972 2.911H2.76c-.552 0-.76.611-.76 1.163v5.837H.76c-.553 0-.76.61-.76 1.163v4c0 .553.208.837.76.837H2v6.163c0 .553.208.837.76.837h18c.553 0 1.24-.284 1.24-.837V16.67h.76c.553 0 1.24-.284 1.24-.837v-4c0-.552-.687-1.163-1.24-1.163zM1 15.67v-4h2v4H1zm19 6H4v-16h16v16zm3-6h-2v-4h2v4z"/><path d="M15.76 8.833a2 2 0 1 0-.001 3.999 2 2 0 0 0 .001-3.999zm0 3a1 1 0 1 1 0-2 1 1 0 1 1 0 2zm-8 1a2 2 0 1 0-.001-4.001 2 2 0 0 0 .001 4.001zm0-3a1 1 0 1 1 0 2 1 1 0 1 1 0-2zM17 16.67a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-2zm-9.24 2.163v-2h2v2h-2zm3 0v-2h2v2h-2zm5 0h-2v-2h2v2z"/></symbol>
+		<symbol viewBox="0 0 24.002 23.705" id="2961"><path d="M23.077 7.508C22.28 6.952 12.52.209 12.52.209c-.391-.278-1.281-.278-1.672 0 0 0-9.664 6.85-10.287 7.275-.623.426-.56 1.019-.56 1.019v.538c0 .532 0 .664.533.664h1.467v12H.571c-.553 0-.57.746-.57 1.299v.701h24v-.701c0-.553-.877-1.299-1.43-1.299h-.57v-12h.607c.532 0 1.393-.132 1.393-.664v-.538c.001 0-.129-.44-.924-.995zM11.572 1.705l8.901 6H2.67l8.902-6zm-8.57 20v-12h2v12h-2zm3 0v-12h4v12h-4zm5 0v-12h2v12h-2zm3 0v-12h4v12h-4zm7 0h-2v-12h2v12z"/></symbol>
+		<symbol viewBox="0 0 24 23.52" id="2964"><path d="M23.318 18.348l-3.431-3.402c-.274-5.384-2.704-10.193-6.411-13.629A19.955 19.955 0 0 0 11.892 0a20.1 20.1 0 0 0-1.58 1.316C6.606 4.752 4.189 9.561 3.914 14.945L.568 18.347c-.281.282-.568.479-.568 1.032v3.594c0 .553.333.548.885.548h22c.553 0 1.115.005 1.115-.548v-3.594c0-.553-.401-.75-.682-1.031zm-17.171.172h11.477c-.179 1-.444 2-.791 3H6.938c-.347-1-.612-2-.791-3zm11.61-1H6.013c-.075-1-.128-1-.128-2h12c0 1-.052 1-.128 2zM11.885 2.131c3.441 3.087 5.673 7.39 5.945 12.39H5.94c.272-5.001 2.504-9.303 5.945-12.39zM1 22.52v-3.048l2.968-3.252c.055 2.296.447 4.299 1.215 6.299H1zm22 0h-4.413c.769-2 1.275-4.003 1.33-6.299L23 19.473v3.047z"/><path d="M11.885 12.973a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-5a2 2 0 1 1-.001 4.001 2 2 0 0 1 .001-4.001z"/></symbol>
+		<symbol viewBox="0 0 26 26" id="apply"><path fill="#898989" d="M25 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v22a1 1 0 0 0 1 1h22a1 1 0 0 0 1-1V2zm-2 21H3V3h20v20z"/><path d="M10.765 8.497h8v1h-8zm0 3h8v1h-8zm3.615 2h4.385v1H14.38zm-3.713 6h8.098v-1h-7.098zm2-2h6.098v-1h-5.098zm-1.902-11h8v1h-8zm-1 0h-3v3h3v-3zm-1 2.003h-1v-1h1v1zm1 2.997h-3v3h3v-3zM8.78 13.5h-1v-1h1v1zM12.67 15.697c.086-.087.086-.193 0-.28l-.837-.837c-.087-.086-.193-.086-.28 0l-2.696 2.697L7.4 15.82c-.087-.087-.193-.087-.28 0l-.836.837c-.087.087-.087.192 0 .28l2.4 2.4s.167.178.312.033l3.674-3.673z" fill="#898989"/></symbol>
+		<symbol viewBox="0 0 23 6.026" id="arrow-expand"><path d="M11.5 6.026L.294.956A.501.501 0 0 1 .706.044L11.5 4.928 22.294.044a.5.5 0 0 1 .412.912L11.5 6.026z"/></symbol>
+		<symbol viewBox="0 0 24 24" id="camera-foto"><path d="M23 4h-2V3h-3v1h-1V1a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v3H1a1 1 0 0 0-1 1v18a1 1 0 0 0 1 1h22a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zM8 1h8v3H8V1zM4 22H2V6h2v16zm18 0H5V6h17v16z"/><path d="M18 7h3v2h-3zm-6 13a6 6 0 1 0 0-12 6 6 0 0 0 0 12zm0-11a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"/><path d="M12 18a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-7a3 3 0 1 1 0 6 3 3 0 0 1 0-6zM9 2h6v1H9z"/></symbol>
+		<symbol viewBox="0 0 36.39 25.752" id="cecutient"><path d="M29.601 1.018a.82.82 0 0 0-.591-.467L26.228.016a.818.818 0 0 0-.31 1.606l2.366.455 4.912 10.906a7.965 7.965 0 0 0-12.952.312c-.454-.359-1.137-.581-1.941-.599-.718-.017-1.581.15-2.154.605a7.969 7.969 0 0 0-6.591-3.494 7.965 7.965 0 0 0-6.405 3.23l4.85-10.96 2.362-.454a.817.817 0 1 0-.31-1.606L7.274.55a.818.818 0 0 0-.593.472S0 16.099 0 16.252v2.085c0 .226.183.409.409.409h1.098a.405.405 0 0 0 .139-.028c.467 3.955 3.834 7.033 7.913 7.033 4.396 0 7.973-3.577 7.973-7.973a7.923 7.923 0 0 0-.95-3.769c.323-.314.969-.516 1.704-.498.673.015 1.243.204 1.529.485a7.927 7.927 0 0 0-.956 3.782c0 4.396 3.577 7.973 7.973 7.973 4.078 0 7.446-3.079 7.913-7.033.044.016.09.028.139.028h1.097a.409.409 0 0 0 .409-.409v-2.085c0-.148-6.789-15.234-6.789-15.234zM1.507 17.929H.818v-1.268h.835c.007 0 .013-.004.02-.004-.052.368-.088.74-.088 1.122 0 .056.007.111.009.168-.029-.007-.056-.018-.087-.018zm8.052 6.188c-3.495 0-6.338-2.843-6.338-6.338s2.843-6.338 6.338-6.338 6.338 2.843 6.338 6.338-2.844 6.338-6.338 6.338zm17.272 0c-3.495 0-6.338-2.843-6.338-6.338s2.843-6.338 6.338-6.338 6.338 2.843 6.338 6.338-2.843 6.338-6.338 6.338zm8.741-6.188h-.689c-.031 0-.058.011-.087.018.001-.056.009-.111.009-.168 0-.381-.036-.754-.088-1.122.007 0 .013.004.021.004h.835v1.268zm-3.736-.078a.409.409 0 1 1-.818 0c0-1.135-.655-2.181-1.711-2.729a.409.409 0 0 1 .377-.725c1.328.689 2.152 2.013 2.152 3.454zM7.341 21.383a.41.41 0 0 1-.534.222c-1.653-.684-2.642-2.293-2.46-4.004a.409.409 0 0 1 .813.087c-.144 1.347.644 2.617 1.959 3.161a.41.41 0 0 1 .222.534z"/></symbol>
+		<symbol viewBox="0 0 11.302 11.302" id="edit-cross"><path d="M8.318 5.651l2.829-2.829c.207-.207.207-.46 0-.667l-2-2c-.207-.207-.46-.207-.667 0L5.651 2.984 2.822.155c-.207-.207-.46-.207-.667 0l-2 2c-.207.207-.207.46 0 .667l2.829 2.829L.155 8.48c-.207.207-.207.459 0 .667l2 2c.207.207.46.207.667 0l2.829-2.828 2.829 2.828c.207.207.459.207.667 0l2-2c.207-.207.207-.46 0-.667L8.318 5.651zm.495 4.496L5.651 6.985l-3.162 3.162-1.334-1.334 3.162-3.162-3.162-3.162 1.333-1.333L5.65 4.318l3.162-3.162 1.333 1.333-3.161 3.162 3.162 3.162-1.333 1.334z"/></symbol>
+		<symbol id="edit-eye" viewBox="0 0 12.833 8.556"><style>.alst0{fill:#0071bc}</style><path class="alst0" d="M6.417 0C1.604-.001 0 4.278 0 4.278s1.604 4.278 6.417 4.278c4.813-.001 6.417-4.278 6.417-4.278S11.229 0 6.417 0zm-.001 7.486c-3.244 0-4.759-2.283-5.239-3.207.481-.918 2.005-3.21 5.24-3.21 3.244 0 4.759 2.283 5.24 3.206-.482.92-2.006 3.211-5.241 3.211z"/><path class="alst0" d="M6.417 1.604a2.674 2.674 0 1 0 0 5.348 2.674 2.674 0 0 0 0-5.348zm0 4.813a2.14 2.14 0 1 1 0-4.279 2.14 2.14 0 0 1 0 4.279z"/><circle class="alst0" cx="6.417" cy="4.278" r="1.604"/></symbol>
+		<symbol id="edit-pen" viewBox="0 0 13.645 13.899"><style>.amst0{fill:#0071bc}</style><path class="amst0" d="M13.497 3.37L10.284.159c-.195-.195-.45-.227-.676 0L0 9.892v4.007h3.762l9.735-9.731c.188-.187.207-.59 0-.798zM3.209 12.798l-2.346-.006-.001-2.352.145-.097 2.304 2.304-.102.151zm.533-.583L1.439 9.911l6.837-6.943 2.41 2.41-6.944 6.837zm7.345-7.238l-2.41-2.41 1.205-1.205 2.41 2.409-1.205 1.206z"/></symbol>
+		<symbol id="edit-trash" viewBox="0 0 10.139 12.167"><style>.anst0{fill:#0071bc}</style><path class="anst0" d="M9.632 1.014H6.59V.507A.494.494 0 0 0 6.099 0H4.071a.52.52 0 0 0-.523.507v.507H.507A.507.507 0 0 0 0 1.521v2.028c0 .28.18.507.507.507v7.604c0 .28.243.507.523.507h8.128c.28 0 .474-.227.474-.507V4.056c.507 0 .507-.227.507-.507V1.521a.507.507 0 0 0-.507-.507zM4.056.507h2.028v.507H4.056V.507zM1.521 11.153V4.056h1.014v7.097H1.521zm1.521 0V4.056h1.014v7.097H3.042zm1.521 0V4.056h1.014v7.097H4.563zm1.52 0V4.056h1.014v7.097H6.083zm2.535 0H7.604V4.056h1.014v7.097zm.507-8.111H1.014V2.028h8.111v1.014z"/></symbol>
+		<symbol viewBox="0 0 26.0005379 26" id="favorites"><g fill="#0071BC"><path d="M24 1H2a1 1 0 0 0-1 1v22a1 1 0 0 0 1 1h22a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm-1 22H3V3h20v20z"/><path d="M9.188 14.945l-.752 4.385a.501.501 0 0 0 .725.527l3.938-2.07 3.937 2.07a.501.501 0 0 0 .726-.527l-.752-4.385 3.185-3.105a.501.501 0 0 0-.277-.853l-4.402-.64-1.969-3.989a.501.501 0 0 0-.897 0l-1.968 3.99-4.402.64a.501.501 0 0 0-.278.852l3.186 3.105zm1.898-3.646a.502.502 0 0 0 .376-.273L13.1 7.71l1.636 3.316c.073.147.215.25.377.273l3.66.532-2.649 2.581a.502.502 0 0 0-.143.443l.625 3.645-3.273-1.72a.502.502 0 0 0-.466 0L9.593 18.5l.625-3.645a.502.502 0 0 0-.144-.443l-2.648-2.581 3.66-.532z"/></g></symbol>
+		<symbol id="geolocation" viewBox="0 0 24 24"><style>.apst0{fill:#0071bc}</style><path class="apst0" d="M23 4l-5.029 1.428A6 6 0 0 0 7.375 2.18v-.001L1 4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1l7-2 8 4 7-2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zM12 1c2.762 0 5 2.238 5 5s-1 3.5-5 7.5C8 9.5 7 8.762 7 6s2.238-5 5-5zm0 14c1.227-1.227 2.211-2.191 3-3.002V21.5l-6-3v-6.502c.789.811 1.773 1.775 3 3.002zM2 20V6l4.168-1.39A6.017 6.017 0 0 0 6 6c0 2.111.412 3.16 2 4.934V18l-6 2zM6.991 2.7l-.065.108.065-.108zm-.333.577c-.017.033-.032.067-.048.1l.048-.1zm-.279.639c-.006.02-.014.037-.019.057.005-.02.013-.038.019-.057zM22 20l-6 2V10.934c1.205-1.346 1.73-2.28 1.914-3.571L22 6v14z"/><path class="apst0" d="M12 9a3.001 3.001 0 0 0 0-6 3.001 3.001 0 0 0 0 6zm0-5a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 4z"/></symbol>
+		<symbol id="organization" viewBox="0 0 25.021 26.917"><style>.aqst0{fill:#0071bc}</style><path class="aqst0" d="M17.573 11.75V0H7.406v11.75H0v15.167h25.021V11.75h-7.448zM1.5 25.417V13.25h5.906v12.167H1.5zm14.573 0H8.941V11.75h-.035V1.5h7.167v23.917zm7.448 0H17.58V13.25h5.941v12.167z"/><path class="aqst0" d="M10.511 3.167h3.688v1.5h-3.688zm0 2.937h3.688v1.5h-3.688zm0 2.938h3.688v1.5h-3.688zm0 2.937h3.688v1.5h-3.688zm0 2.938h3.688v1.5h-3.688zm0 2.937h3.688v1.5h-3.688zm-7.688-2.937h3.063v1.5H2.823zm0 2.937h3.063v1.5H2.823zm0 2.938h3.063v1.5H2.823zm16.125-5.875h3.063v1.5h-3.063zm0 2.937h3.063v1.5h-3.063zm0 2.938h3.063v1.5h-3.063z"/></symbol>
+		<symbol id="pie-electrons" viewBox="0 0 30.003 29.413"><style>.arst0{fill:#1072ba}</style><path class="arst0" d="M15.001 11.94c-1.525 0-2.766 1.241-2.766 2.767s1.241 2.767 2.766 2.767 2.767-1.241 2.767-2.767-1.241-2.767-2.767-2.767zm0 3.533a.768.768 0 1 1 .003-1.535.768.768 0 0 1-.003 1.535z"/><path class="arst0" d="M30.003 14.707c0-2.601-3.788-4.318-8.643-5.103.081-1.421.07-2.76-.05-3.959C20.898 1.499 19.416.32 18.246.061A2.5 2.5 0 0 0 17.693 0c-1.915 0-3.716 2.047-5.197 4.945-2.076-1.398-3.975-2.201-5.404-2.201-.797 0-1.461.228-1.974.677-1.485 1.3-1.144 3.91.242 6.913C2.188 11.27 0 12.733 0 14.707c0 2.601 3.788 4.319 8.643 5.103-.081 1.42-.07 2.76.049 3.959.412 4.146 1.894 5.324 3.064 5.584.181.04.367.061.554.061 1.915 0 3.716-2.047 5.197-4.946 2.075 1.398 3.975 2.201 5.403 2.201.797 0 1.462-.229 1.975-.678.901-.789 1.634-2.535.004-6.369-.076-.178-.165-.361-.249-.543 3.174-.935 5.363-2.398 5.363-4.372zM17.693 2a.55.55 0 0 1 .122.013c.572.126 1.261 1.36 1.506 3.829.105 1.058.12 2.239.055 3.496a41.473 41.473 0 0 0-1.867-.151 36.535 36.535 0 0 0-3.38-3.047C15.47 3.439 16.849 2 17.693 2zm2.78 13.879c.434.627.836 1.247 1.198 1.858-.544.1-1.123.187-1.727.263.191-.694.368-1.39.521-2.082l.008-.039zm-1.961-.395a41.76 41.76 0 0 1-.698 2.725 41.896 41.896 0 0 1-4.426.061 42.024 42.024 0 0 1-1.092-1.195 42.808 42.808 0 0 1-1.153-1.38c.103-.584.216-1.172.347-1.766.213-.963.448-1.871.698-2.724a41.874 41.874 0 0 1 4.427-.061c.362.383.726.777 1.091 1.194.401.458.782.919 1.153 1.382a40.621 40.621 0 0 1-.347 1.764zm-1.362 4.759c-.142.398-.287.781-.435 1.147a33.265 33.265 0 0 1-1.271-1.095 41.91 41.91 0 0 0 1.706-.052zM9.529 13.54a31.51 31.51 0 0 1-1.204-1.862 32.24 32.24 0 0 1 1.734-.265 43.668 43.668 0 0 0-.521 2.082l-.009.045zm3.324-4.37c.142-.398.287-.781.435-1.147.416.341.839.703 1.271 1.096-.571.005-1.14.023-1.706.051zM6.436 4.926c.138-.121.358-.182.656-.182 1.01 0 2.63.691 4.555 2.032a35.23 35.23 0 0 0-.956 2.555 33.89 33.89 0 0 0-3.363.513C6.089 7.299 5.826 5.46 6.436 4.926zM2 14.707c0-.811 1.557-1.825 4.289-2.569a35.914 35.914 0 0 0 2.734 4.099 38.473 38.473 0 0 0-.211 1.582C4.534 17.104 2 15.742 2 14.707zm10.31 12.707a.55.55 0 0 1-.122-.014c-.573-.127-1.261-1.36-1.506-3.829-.105-1.058-.12-2.239-.055-3.496.614.064 1.237.114 1.866.151a36.413 36.413 0 0 0 3.381 3.047c-1.341 2.701-2.72 4.141-3.564 4.141zm10.738-7.008c.972 2.283.96 3.695.519 4.082-.138.12-.358.182-.656.182-1.01 0-2.63-.691-4.555-2.032a35.23 35.23 0 0 0 .956-2.555 33.692 33.692 0 0 0 3.353-.511c.137.281.267.561.383.834zm.666-3.13a35.202 35.202 0 0 0-2.734-4.098c.083-.534.152-1.061.211-1.582 4.278.714 6.812 2.076 6.812 3.111 0 .811-1.557 1.824-4.289 2.569z"/></symbol>
+		<symbol id="pie-happy" viewBox="0 0 24 24"><style>.asst0{fill:#fff}</style><path class="asst0" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.522 2 12S6.477 2 12 2s10 4.477 10 10-4.478 10-10 10z"/><path class="asst0" d="M12.155 18.5a8.53 8.53 0 0 0 5.791-2.265A7.223 7.223 0 0 0 17 15.167a7.107 7.107 0 0 1-9.688 0c-.35.324-.667.681-.946 1.068a8.521 8.521 0 0 0 5.789 2.265z"/><circle class="asst0" cx="9.066" cy="10.498" r="1.833"/><circle class="asst0" cx="15.066" cy="10.498" r="1.833"/></symbol>
+		<symbol id="pie-normal" viewBox="0 0 24 24"><style>.atst0{fill:#fff}</style><path class="atst0" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.522 2 12S6.477 2 12 2s10 4.477 10 10-4.478 10-10 10z"/><circle class="atst0" cx="8.911" cy="10.183" r="1.833"/><circle class="atst0" cx="14.911" cy="10.183" r="1.833"/><path class="atst0" d="M8.877 15.725h6.313v1.5H8.877z"/></symbol>
+		<symbol id="pie-rouble" viewBox="0 0 24 24"><style>.aust0{fill:#1072ba}</style><path class="aust0" d="M12.411 4.44H8.765v11.339H7.31v2h1.454v1.632h2v-1.632h2.164v-2h-2.164v-.781h1.646c2.91 0 5.278-2.368 5.278-5.279S15.321 4.44 12.411 4.44zm0 8.558h-1.646V6.44h1.646c1.808 0 3.278 1.471 3.278 3.279s-1.47 3.279-3.278 3.279z"/><path class="aust0" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.478 22 2 17.522 2 12 2 6.477 6.478 2 12 2s10 4.477 10 10c0 5.522-4.478 10-10 10z"/></symbol>
+		<symbol id="pie-sad" viewBox="0 0 24 24"><style>.avst0{fill:#fff}</style><path class="avst0" d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.477 22 2 17.522 2 12S6.477 2 12 2s10 4.477 10 10-4.478 10-10 10z"/><path class="avst0" d="M12 15.167a8.53 8.53 0 0 0-5.791 2.265c.279.387.597.744.946 1.068a7.107 7.107 0 0 1 9.688 0c.35-.324.667-.681.946-1.068A8.521 8.521 0 0 0 12 15.167z"/><circle class="avst0" cx="8.911" cy="10.498" r="1.833"/><circle class="avst0" cx="14.911" cy="10.498" r="1.833"/></symbol>
+		<symbol id="pie-shield" viewBox="0 0 19.842 23.089"><style>.awst0{fill:#1072ba}</style><path class="awst0" d="M10.17 23.088l-.579-.014C3.161 22.011-.811 14.252.146 4.622L.25 3.57l1.045.164c.273.042.551.064.826.064 3.465 0 6.01-3.361 6.035-3.396l.3-.402h2.931l.3.403c.024.032 2.591 3.395 6.033 3.395.275 0 .553-.021.826-.064l1.045-.164.104 1.052c.958 9.628-3.014 17.389-9.444 18.452l-.081.014zm-.331-2h.164c5.107-.903 8.296-7.243 7.782-15.29h-.065c-3.677 0-6.397-2.741-7.31-3.798h-.978C8.52 3.056 5.798 5.798 2.121 5.798h-.065c-.513 8.047 2.675 14.387 7.783 15.29z"/><path class="awst0" d="M9.921 20.596l-.095-.018C5.23 19.694 2.291 14.13 2.513 6.736l.013-.436.434-.046c3.085-.33 5.427-2.394 6.549-3.595l.148-.159h.435l.242.159c1.121 1.201 3.461 3.265 6.548 3.595l.433.046.014.436c.221 7.395-2.718 12.958-7.313 13.843l-.095.017zM3.503 7.19c-.087 6.62 2.46 11.556 6.417 12.387 3.957-.831 6.505-5.768 6.418-12.387-2.923-.457-5.168-2.261-6.418-3.519C8.669 4.929 6.423 6.733 3.503 7.19z"/></symbol>
+		<symbol viewBox="0 0 7.7 13.3" id="slide-left"><path d="M7 0l.7.7-6.2 6 6.2 5.9-.7.7-7-6.6z"/></symbol>
+		<symbol viewBox="0 0 7.7 13.3" id="slide-right"><path d="M.7 13.3l-.7-.7 6.2-5.9L0 .7.7 0l7 6.7z"/></symbol>
+		<symbol id="student" viewBox="0 0 19.063 21.951"><style>.azst0{fill:#0071bc}</style><path class="azst0" d="M11.545 14.402a5.756 5.756 0 0 0 3.679-5.359c0-.112-.012-.221-.018-.332l.141.073V5.875l3.716-1.009L9.472 0 .001 4.806l3.533 1.147.002 2.923.201-.136c-.005.101-.017.201-.017.303 0 2.44 1.53 4.525 3.679 5.359-3.869.654-6.276 3.174-6.28 6.798l-.001.751h16.709l-.002-.751c-.004-3.624-2.411-6.144-6.28-6.798zM9.472 1.682l5.437 2.759-1.062.288v1.644c-1.537-.642-3.097-.966-4.65-.966-1.8 0-3.235.437-4.163.829V4.863l-1.117-.362 5.555-2.819zM5.22 9.043c0-.465.078-.914.222-1.344a9.188 9.188 0 0 1 3.756-.791c1.446 0 2.906.346 4.351.99.104.371.175.751.175 1.146 0 2.345-1.907 4.252-4.252 4.252S5.22 11.388 5.22 9.043zM2.662 20.451c.418-3.465 3.714-4.723 6.81-4.723s6.392 1.258 6.81 4.723H2.662z"/></symbol>
+		<symbol id="upload-list__remove-btn" viewBox="0 0 15.052 15.052"><style>.bast0{fill:#999}</style><path class="bast0" d="M7.526 0a7.526 7.526 0 1 0 0 15.052A7.526 7.526 0 0 0 7.526 0zm4.353 11.173l-.707.707-3.646-3.647-3.647 3.647-.707-.707L6.82 7.526 3.172 3.88l.707-.707 3.647 3.646 3.646-3.646.707.707-3.646 3.646 3.646 3.647z"/></symbol>
+</svg>
+
+<!--
+====================================================================================================
+-->
+		
+		<header>
+			<h1>SVG <code>&lt;symbol&gt;</code> sprite preview</h1>
+			<p>This preview features two methods of using the generated sprite in conjunction with inline SVG. Please have a look at the HTML source for further details and be aware of the following constraints:</p>
+			<ul>
+				<li>Your browser has to <a href="http://caniuse.com/#feat=svg-html5" target="_blank">support inline SVG</a> for these techniques to work.</li>
+				<li>The embedded sprite (A) slightly differs from the generated external one. Please <a href="https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#defs--symbol-mode" target="_blank">see the documentation</a> for details on how to create such an embeddable sprite.</li>
+				<li>Internet Explorer up to version 11 doesn't support external sprites for use with inline SVG. For IE 9-11, you may polyfill this functionality with <a href="https://github.com/jonathantneal/svg4everybody" target="_blank">SVG for Everybody</a>.</li>
+			</ul>
+		</header>
+		<section>
+
+<!--
+	
+A) Inline SVG with embedded sprite
+====================================================================================================
+These SVG images make use of fragment identifiers (IDs) and are extracted out of the inline sprite
+embedded above. They may be styled via CSS.
+
+-->
+
+			<h3>A) Inline SVG with embedded sprite</h3>
+			<ul>
+
+				<li title="2781">
+					<div class="icon-box">
+						
+						<!-- 2781 -->
+						<svg class="svg-2781-dims">
+							<use xlink:href="#2781"></use>
+						</svg>
+						
+					</div>
+					<h2>2781</h2>
+				</li>
+				<li title="2834">
+					<div class="icon-box">
+						
+						<!-- 2834 -->
+						<svg class="svg-2834-dims">
+							<use xlink:href="#2834"></use>
+						</svg>
+						
+					</div>
+					<h2>2834</h2>
+				</li>
+				<li title="2850">
+					<div class="icon-box">
+						
+						<!-- 2850 -->
+						<svg class="svg-2850-dims">
+							<use xlink:href="#2850"></use>
+						</svg>
+						
+					</div>
+					<h2>2850</h2>
+				</li>
+				<li title="2905">
+					<div class="icon-box">
+						
+						<!-- 2905 -->
+						<svg class="svg-2905-dims">
+							<use xlink:href="#2905"></use>
+						</svg>
+						
+					</div>
+					<h2>2905</h2>
+				</li>
+				<li title="2961">
+					<div class="icon-box">
+						
+						<!-- 2961 -->
+						<svg class="svg-2961-dims">
+							<use xlink:href="#2961"></use>
+						</svg>
+						
+					</div>
+					<h2>2961</h2>
+				</li>
+				<li title="2964">
+					<div class="icon-box">
+						
+						<!-- 2964 -->
+						<svg class="svg-2964-dims">
+							<use xlink:href="#2964"></use>
+						</svg>
+						
+					</div>
+					<h2>2964</h2>
+				</li>
+				<li title="apply">
+					<div class="icon-box">
+						
+						<!-- apply -->
+						<svg class="svg-apply-dims">
+							<use xlink:href="#apply"></use>
+						</svg>
+						
+					</div>
+					<h2>apply</h2>
+				</li>
+				<li title="arrow-expand">
+					<div class="icon-box">
+						
+						<!-- arrow-expand -->
+						<svg class="svg-arrow-expand-dims">
+							<use xlink:href="#arrow-expand"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow-expand</h2>
+				</li>
+				<li title="camera-foto">
+					<div class="icon-box">
+						
+						<!-- camera-foto -->
+						<svg class="svg-camera-foto-dims">
+							<use xlink:href="#camera-foto"></use>
+						</svg>
+						
+					</div>
+					<h2>camera-foto</h2>
+				</li>
+				<li title="cecutient">
+					<div class="icon-box">
+						
+						<!-- cecutient -->
+						<svg class="svg-cecutient-dims">
+							<use xlink:href="#cecutient"></use>
+						</svg>
+						
+					</div>
+					<h2>cecutient</h2>
+				</li>
+				<li title="edit-cross">
+					<div class="icon-box">
+						
+						<!-- edit-cross -->
+						<svg class="svg-edit-cross-dims">
+							<use xlink:href="#edit-cross"></use>
+						</svg>
+						
+					</div>
+					<h2>edit-cross</h2>
+				</li>
+				<li title="edit-eye">
+					<div class="icon-box">
+						
+						<!-- edit-eye -->
+						<svg class="svg-edit-eye-dims">
+							<use xlink:href="#edit-eye"></use>
+						</svg>
+						
+					</div>
+					<h2>edit-eye</h2>
+				</li>
+				<li title="edit-pen">
+					<div class="icon-box">
+						
+						<!-- edit-pen -->
+						<svg class="svg-edit-pen-dims">
+							<use xlink:href="#edit-pen"></use>
+						</svg>
+						
+					</div>
+					<h2>edit-pen</h2>
+				</li>
+				<li title="edit-trash">
+					<div class="icon-box">
+						
+						<!-- edit-trash -->
+						<svg class="svg-edit-trash-dims">
+							<use xlink:href="#edit-trash"></use>
+						</svg>
+						
+					</div>
+					<h2>edit-trash</h2>
+				</li>
+				<li title="favorites">
+					<div class="icon-box">
+						
+						<!-- favorites -->
+						<svg class="svg-favorites-dims">
+							<use xlink:href="#favorites"></use>
+						</svg>
+						
+					</div>
+					<h2>favorites</h2>
+				</li>
+				<li title="geolocation">
+					<div class="icon-box">
+						
+						<!-- geolocation -->
+						<svg class="svg-geolocation-dims">
+							<use xlink:href="#geolocation"></use>
+						</svg>
+						
+					</div>
+					<h2>geolocation</h2>
+				</li>
+				<li title="organization">
+					<div class="icon-box">
+						
+						<!-- organization -->
+						<svg class="svg-organization-dims">
+							<use xlink:href="#organization"></use>
+						</svg>
+						
+					</div>
+					<h2>organization</h2>
+				</li>
+				<li title="pie-electrons">
+					<div class="icon-box">
+						
+						<!-- pie-electrons -->
+						<svg class="svg-pie-electrons-dims">
+							<use xlink:href="#pie-electrons"></use>
+						</svg>
+						
+					</div>
+					<h2>pie-electrons</h2>
+				</li>
+				<li title="pie-happy">
+					<div class="icon-box">
+						
+						<!-- pie-happy -->
+						<svg class="svg-pie-happy-dims">
+							<use xlink:href="#pie-happy"></use>
+						</svg>
+						
+					</div>
+					<h2>pie-happy</h2>
+				</li>
+				<li title="pie-normal">
+					<div class="icon-box">
+						
+						<!-- pie-normal -->
+						<svg class="svg-pie-normal-dims">
+							<use xlink:href="#pie-normal"></use>
+						</svg>
+						
+					</div>
+					<h2>pie-normal</h2>
+				</li>
+				<li title="pie-rouble">
+					<div class="icon-box">
+						
+						<!-- pie-rouble -->
+						<svg class="svg-pie-rouble-dims">
+							<use xlink:href="#pie-rouble"></use>
+						</svg>
+						
+					</div>
+					<h2>pie-rouble</h2>
+				</li>
+				<li title="pie-sad">
+					<div class="icon-box">
+						
+						<!-- pie-sad -->
+						<svg class="svg-pie-sad-dims">
+							<use xlink:href="#pie-sad"></use>
+						</svg>
+						
+					</div>
+					<h2>pie-sad</h2>
+				</li>
+				<li title="pie-shield">
+					<div class="icon-box">
+						
+						<!-- pie-shield -->
+						<svg class="svg-pie-shield-dims">
+							<use xlink:href="#pie-shield"></use>
+						</svg>
+						
+					</div>
+					<h2>pie-shield</h2>
+				</li>
+				<li title="slide-left">
+					<div class="icon-box">
+						
+						<!-- slide-left -->
+						<svg class="svg-slide-left-dims">
+							<use xlink:href="#slide-left"></use>
+						</svg>
+						
+					</div>
+					<h2>slide-left</h2>
+				</li>
+				<li title="slide-right">
+					<div class="icon-box">
+						
+						<!-- slide-right -->
+						<svg class="svg-slide-right-dims">
+							<use xlink:href="#slide-right"></use>
+						</svg>
+						
+					</div>
+					<h2>slide-right</h2>
+				</li>
+				<li title="student">
+					<div class="icon-box">
+						
+						<!-- student -->
+						<svg class="svg-student-dims">
+							<use xlink:href="#student"></use>
+						</svg>
+						
+					</div>
+					<h2>student</h2>
+				</li>
+				<li title="upload-list__remove-btn">
+					<div class="icon-box">
+						
+						<!-- upload-list__remove-btn -->
+						<svg class="svg-upload-list__remove-btn-dims">
+							<use xlink:href="#upload-list__remove-btn"></use>
+						</svg>
+						
+					</div>
+					<h2>upload-list__remove-btn</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<section>
+
+<!--
+	
+B) Inline SVG with external sprite (IE 9-11 with polyfill only)
+====================================================================================================
+These SVG images make use of an URL + fragment identifiers (IDs) and refer to the regular external
+SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
+
+-->
+
+			<h3>B) Inline SVG with external sprite (IE 9-11 with polyfill only)</h3>
+			<ul>
+				
+				<li title="2781">
+					<div class="icon-box">
+						
+						<!-- 2781 -->
+						<svg class="svg-2781-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#2781"></use>
+						</svg>
+						
+					</div>
+					<h2>2781</h2>
+				</li>
+				<li title="2834">
+					<div class="icon-box">
+						
+						<!-- 2834 -->
+						<svg class="svg-2834-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#2834"></use>
+						</svg>
+						
+					</div>
+					<h2>2834</h2>
+				</li>
+				<li title="2850">
+					<div class="icon-box">
+						
+						<!-- 2850 -->
+						<svg class="svg-2850-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#2850"></use>
+						</svg>
+						
+					</div>
+					<h2>2850</h2>
+				</li>
+				<li title="2905">
+					<div class="icon-box">
+						
+						<!-- 2905 -->
+						<svg class="svg-2905-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#2905"></use>
+						</svg>
+						
+					</div>
+					<h2>2905</h2>
+				</li>
+				<li title="2961">
+					<div class="icon-box">
+						
+						<!-- 2961 -->
+						<svg class="svg-2961-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#2961"></use>
+						</svg>
+						
+					</div>
+					<h2>2961</h2>
+				</li>
+				<li title="2964">
+					<div class="icon-box">
+						
+						<!-- 2964 -->
+						<svg class="svg-2964-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#2964"></use>
+						</svg>
+						
+					</div>
+					<h2>2964</h2>
+				</li>
+				<li title="apply">
+					<div class="icon-box">
+						
+						<!-- apply -->
+						<svg class="svg-apply-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#apply"></use>
+						</svg>
+						
+					</div>
+					<h2>apply</h2>
+				</li>
+				<li title="arrow-expand">
+					<div class="icon-box">
+						
+						<!-- arrow-expand -->
+						<svg class="svg-arrow-expand-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#arrow-expand"></use>
+						</svg>
+						
+					</div>
+					<h2>arrow-expand</h2>
+				</li>
+				<li title="camera-foto">
+					<div class="icon-box">
+						
+						<!-- camera-foto -->
+						<svg class="svg-camera-foto-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#camera-foto"></use>
+						</svg>
+						
+					</div>
+					<h2>camera-foto</h2>
+				</li>
+				<li title="cecutient">
+					<div class="icon-box">
+						
+						<!-- cecutient -->
+						<svg class="svg-cecutient-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#cecutient"></use>
+						</svg>
+						
+					</div>
+					<h2>cecutient</h2>
+				</li>
+				<li title="edit-cross">
+					<div class="icon-box">
+						
+						<!-- edit-cross -->
+						<svg class="svg-edit-cross-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#edit-cross"></use>
+						</svg>
+						
+					</div>
+					<h2>edit-cross</h2>
+				</li>
+				<li title="edit-eye">
+					<div class="icon-box">
+						
+						<!-- edit-eye -->
+						<svg class="svg-edit-eye-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#edit-eye"></use>
+						</svg>
+						
+					</div>
+					<h2>edit-eye</h2>
+				</li>
+				<li title="edit-pen">
+					<div class="icon-box">
+						
+						<!-- edit-pen -->
+						<svg class="svg-edit-pen-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#edit-pen"></use>
+						</svg>
+						
+					</div>
+					<h2>edit-pen</h2>
+				</li>
+				<li title="edit-trash">
+					<div class="icon-box">
+						
+						<!-- edit-trash -->
+						<svg class="svg-edit-trash-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#edit-trash"></use>
+						</svg>
+						
+					</div>
+					<h2>edit-trash</h2>
+				</li>
+				<li title="favorites">
+					<div class="icon-box">
+						
+						<!-- favorites -->
+						<svg class="svg-favorites-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#favorites"></use>
+						</svg>
+						
+					</div>
+					<h2>favorites</h2>
+				</li>
+				<li title="geolocation">
+					<div class="icon-box">
+						
+						<!-- geolocation -->
+						<svg class="svg-geolocation-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#geolocation"></use>
+						</svg>
+						
+					</div>
+					<h2>geolocation</h2>
+				</li>
+				<li title="organization">
+					<div class="icon-box">
+						
+						<!-- organization -->
+						<svg class="svg-organization-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#organization"></use>
+						</svg>
+						
+					</div>
+					<h2>organization</h2>
+				</li>
+				<li title="pie-electrons">
+					<div class="icon-box">
+						
+						<!-- pie-electrons -->
+						<svg class="svg-pie-electrons-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#pie-electrons"></use>
+						</svg>
+						
+					</div>
+					<h2>pie-electrons</h2>
+				</li>
+				<li title="pie-happy">
+					<div class="icon-box">
+						
+						<!-- pie-happy -->
+						<svg class="svg-pie-happy-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#pie-happy"></use>
+						</svg>
+						
+					</div>
+					<h2>pie-happy</h2>
+				</li>
+				<li title="pie-normal">
+					<div class="icon-box">
+						
+						<!-- pie-normal -->
+						<svg class="svg-pie-normal-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#pie-normal"></use>
+						</svg>
+						
+					</div>
+					<h2>pie-normal</h2>
+				</li>
+				<li title="pie-rouble">
+					<div class="icon-box">
+						
+						<!-- pie-rouble -->
+						<svg class="svg-pie-rouble-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#pie-rouble"></use>
+						</svg>
+						
+					</div>
+					<h2>pie-rouble</h2>
+				</li>
+				<li title="pie-sad">
+					<div class="icon-box">
+						
+						<!-- pie-sad -->
+						<svg class="svg-pie-sad-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#pie-sad"></use>
+						</svg>
+						
+					</div>
+					<h2>pie-sad</h2>
+				</li>
+				<li title="pie-shield">
+					<div class="icon-box">
+						
+						<!-- pie-shield -->
+						<svg class="svg-pie-shield-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#pie-shield"></use>
+						</svg>
+						
+					</div>
+					<h2>pie-shield</h2>
+				</li>
+				<li title="slide-left">
+					<div class="icon-box">
+						
+						<!-- slide-left -->
+						<svg class="svg-slide-left-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#slide-left"></use>
+						</svg>
+						
+					</div>
+					<h2>slide-left</h2>
+				</li>
+				<li title="slide-right">
+					<div class="icon-box">
+						
+						<!-- slide-right -->
+						<svg class="svg-slide-right-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#slide-right"></use>
+						</svg>
+						
+					</div>
+					<h2>slide-right</h2>
+				</li>
+				<li title="student">
+					<div class="icon-box">
+						
+						<!-- student -->
+						<svg class="svg-student-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#student"></use>
+						</svg>
+						
+					</div>
+					<h2>student</h2>
+				</li>
+				<li title="upload-list__remove-btn">
+					<div class="icon-box">
+						
+						<!-- upload-list__remove-btn -->
+						<svg class="svg-upload-list__remove-btn-dims">
+							<use xlink:href="/img/svg/sprite-symbol.svg#upload-list__remove-btn"></use>
+						</svg>
+						
+					</div>
+					<h2>upload-list__remove-btn</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Wed, 21 Dec 2016 12:44:40 GMT by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>

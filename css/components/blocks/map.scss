@@ -1,0 +1,44 @@
+.j-map {
+  width: 72.3vw;
+  height: 350px;
+  @media screen and (min-width: 1190px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 940px) {
+    width: 100%;
+  }
+}
+
+.map-container {
+  position: relative;
+}
+
+.map-search {
+  &__select {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__geolocation {
+    vertical-align: middle;
+  }
+  &__geolocation-icon {
+    fill: $c-second;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  &__geolocation-link {
+    color: $c-main;
+    vertical-align: middle;
+
+    &:hover {
+      color: darken($c-main, 5);
+    }
+  }
+  &__select-row {
+    width: 230px;
+    margin: 10px 0;
+  }
+
+}
+

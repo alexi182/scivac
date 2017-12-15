@@ -1,0 +1,53 @@
+// BUTTONS //
+
+.button {
+  display: inline-block;
+  text-align: center;
+  background: transparent;
+  text-decoration: none;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  font: 11.7px $fira-light;
+  text-transform: uppercase;
+  transition: .3s;
+  color: #fff;
+  padding: 6px 15px 3px;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  &_default {
+    background: $c-second;
+    &:hover {
+      background: $c-second_hover;
+    }
+  }
+}
+
+
+// FORMS //
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+textarea,
+.form-row .cusel {
+  border: 1px solid $c-dark;
+  background: #eff4f7;
+}
+
+.registration__form {
+  label {
+    text-align: right;
+    font: normal 12px $fira_light;
+    text-transform: uppercase;
+    color: $c-main;
+    padding-right: 30px;
+  }
+  .neo {
+    margin-bottom: 0;
+  }
+}

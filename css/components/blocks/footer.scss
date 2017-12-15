@@ -1,0 +1,25 @@
+.footer2 {
+  background: $c-back;
+  color: $c-main;
+  text-align: right;
+  margin: 0;
+  height: auto;
+  padding: 10px 0 20px;
+  top: auto;
+  bottom: 0;
+  a {
+    color: $c-main;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer-items {
+  color: #000;
+}
+
+.footer__phone {
+  margin-right: 40px;
+}

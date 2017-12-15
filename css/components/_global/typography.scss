@@ -1,0 +1,71 @@
+body {
+  font: 16px $fira-regular;
+  color: #141414;
+}
+
+
+.header-small {
+  color: $c-main;
+  font: normal 12px $fira-medium;
+  text-transform: uppercase;
+  margin: 0 !important;
+}
+
+
+
+.content-title {
+  font: 20px $fira-light;
+  color: $c-main;
+  text-transform: uppercase;
+  &_margin-left {
+    margin-left: 10px;
+  }
+}
+
+.content-subtitle {
+
+}
+
+.header-2 {
+  font: normal 20px $fira-light;
+  color: $c-main;
+  &_upper {
+    text-transform: uppercase;
+  }
+  &_big-margin {
+    margin: 30px 0 15px;
+  }
+  &_margin-top {
+    margin-top: 20px;
+  }
+  &_closer-to-btm {
+    margin-bottom: -4px;
+  }
+
+}
+
+.header3 {
+  font: normal 14px/1.2 $fira-light;
+  color: $c-main;
+  &_upper {
+    text-transform: uppercase;
+  }
+}
+
+.type {
+  font: normal 12px/1 $fira-regular;
+  color: $c-main;
+  margin: 10px 0;
+  &_upper {
+    text-transform: uppercase;
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* Removes leftover margin */
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}

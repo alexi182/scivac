@@ -1,0 +1,178 @@
+body ,.content2{
+    background: #fff;
+}
+.type{    font: normal 15px/1 fira_sansregular,sans-serif;}
+.shadow-block_table-cell_label{    font-weight: bold!important; font:16px/20px fira_sanslight,sans-serif;color:#000}
+.content-title{font: 24px fira_sanslight,sans-serif;
+    color: #000;}
+.slide-forms__grid{font-size: 17px;}
+.pie__wrapper{padding:0;    display: block;}
+.pie{    width: 270px;
+    height: 270px;}
+.pie__segment{    width: 154px;
+    height: 154px;}
+.pie__icon_1-1{    top: 61px;
+    left: 61px;}
+.pie__caption{    font: 17px/1 fira_sansregular,sans-serif;}
+.pie__caption_1-1 {
+    top: 88px;
+    left: 24px;
+}.pie__icon_1-1 svg {
+    width: 30px;
+    height: 30px;
+}.pie__icon_1-3 svg{
+    width: 30px;
+    height: 30px;
+}.pie__caption_1-2{    top: 53px;
+    left: 56px;
+    width: 75px;
+}.pie__center, .pie__center-outer{    width: 75px;
+    height: 75px;}
+	.pie__center-icon svg {
+    width: 24px; 
+    height: 24px;
+}.pie__icon_1-2 {
+    top: 64px;
+    left: 46px;}
+	.pie__center-outer {
+    width: 85px;
+    height: 85px;}
+	.pie__center-caption {
+    font: 18px/1 fira_sansbold,sans-serif;}
+	.pie-6_noicons .pie__center-caption {
+    font-size: 11px;
+}.pie__icon_1-2 svg {
+    width: 30px;
+    height: 30px;
+}.pie-6 .pie__icon_1-1 svg {
+    width: 40px;
+    height: 40px;
+}.scroll-frame__header-info-col{font-size:20px;}.scroll-frame__header-info-col{    display: inline-block;}
+.pie__caption_1-3{    top: 78px;
+    left: 40px;}
+.v-table_base__cell{font-size:17px}
+.card-table_notice td{font-size:17px}
+.status{font-size:17px!important}
+.svg-edit-trash-dims {
+    width: 17px;
+    height: 17px;
+}.slide-forms__cont-label{color: #000;
+    font: 16px fira_sanslight,sans-serif;}
+.content>.outer-wrapper2>h4{    font-size: 24px;}
+.content>.outer-wrapper2>h4>small>a{font-size:110%}
+.slide-forms__requride-notice{  font-size: 16px;}
+.progr-bar__circle:nth-of-type(odd) .progr-bar__caption{    top: -50px;}
+.vacanc__action{    width: 32px;    height: 32px;}
+.svg-edit-eye-dims {
+       width: 17px;
+    height: 17px;
+}.progr-bar__caption{font-size:17px}
+.pie-6 .pie__icon_1-6 svg {
+    width: 40px;
+    height: 40px;
+}.pie-6_noicons .pie__caption {
+    font-size: 18px;
+    display: block;
+}
+	.pie-6 .pie__icon_1-6 {
+    top: 84px;
+    left: 84px;
+}.pie-6 .pie__icon_1-5 svg {
+    width: 40px;
+    height: 40px;
+}.pie-6 .pie__icon_1-5 {
+    top: 84px;
+    left: 84px;}
+	.pie-6 .pie__icon_1-4 {
+    top: 84px;
+    left: 84px;}
+.pie-6 .pie__icon_1-4 svg {
+    width: 40px;
+    height: 40px;
+}.pie-6 .pie__icon_1-3 {
+    top: 84px;
+    left: 84px;}
+.pie-6 .pie__icon_1-3 svg {
+    width: 40px;
+    height: 40px;
+}.pie-6 .pie__icon_1-2 {
+    top: 84px;
+    left: 84px;}
+.pie-6 .pie__icon_1-2 svg {
+    width: 40px;
+    height: 40px;
+}.pie-6 .pie__icon_1-1 {
+    top: 84px;
+    left: 84px;}
+.pie-6 .pie__icon_1-1 svg {
+    width: 40px;
+    height: 40px;
+}.pie-6_noicons .pie__caption_1-1 {
+    top: 103px;
+    left: 63px;
+}.pie-6_noicons .pie__caption_1-6 {
+    top: 100px;
+    left: 62px;
+}.pie-6_noicons .pie__caption_1-3 {
+    top: 100px;
+    left: 74px;
+}.pie-6_noicons .pie__caption_1-5 {
+    top: 90px;
+    left: 85px;
+}.pie-6_noicons .pie__caption_1-4 {
+    top: 95px;
+    left: 75px;
+}.pie-6_noicons .pie__caption_1-2 {
+    top: 113px; 
+    left: 66px;
+}.pie__icon_1-3 {
+    top: 70px;
+    left: 65px;
+}.pie__caption_1-3 {
+    top: 45px;
+    left: 8px;
+}.announce__title{
+    background-color: rgb(231, 235, 238);}
+.header-2,.map-search__geolocation-link{color:#000;  font: normal 24px fira_sanslight,sans-serif;}
+.announce__link{    font-size: 16px;}
+.jvectormap-tip{    font: 20px fira_sansregular,sans-serif;}
+.footer2 a{ color:#000;     font-size: 17px;}
+.announce__item-title{      font-size: 17px;}
+.content2{padding-bottom:80px !important;}
+.footer__phone {
+   font-size: 17px;
+margin-right:10px}.footer2{ color:#000; font-size: 17px;}
+.login-submenu__title{      color: #000;  font: normal 16px/1 fira_sansregular,sans-serif;}
+input[type="text"].inp-text, input[type="number"].inp-text, input[type="password"].inp-text, input[type="email"].inp-text, input[type="tel"].inp-text{
+    font: 17px fira_sanslight,sans-serif;}.shadow-block_table-cell{font-size: 17px;line-height: 24px }
+.btn {min-width:105px;  width:auto;    padding: 6px 12px;
+    font: 17px fira_sanslight,sans-serif;}.select2-results__option {
+    font-size: 15px;
+}.select-mult1-wrap .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{    width: 17px;
+    height: 18px; }
+.select-mult1-wrap,.slide-forms .header3{ font-size: 17px}
+.slide-forms__edu-row,.uploaded-list__text_no-cut,.uploaded-list__text{ font-size: 15px}
+.header-small,.slide-forms__block-col_3,.uploaded-list__autor{ font-size: 15px}
+.select2-container .select2-selection--single, .select2-container .select2-choice, ._select-single1.select2-container .select2-selection--single, ._select-single1.select2-container .select2-choice{    font: 17px fira_sanslight, sans-serif;}input.slide-forms__add-to-select{font-size: 17px}
+	.login-submenu__link {
+    font: 17px fira_sanslight,sans-serif;}
+	.charts__tabs>div>.historyTitle{    color: #000; font-size: 17px}
+	.charts__row>.openVacanc{    font-size: 20px;
+    float: left;    width: 56%;    color: #000;}
+	.charts__tabs>.avgSalary{      color: #000;  font-size: 17px;}
+	.header3,.charts__tabs>.tabsTitles{color: #000;}
+.logged-submenu__link{font: 14px/1.3em fira_sanslight,sans-serif;}
+.header__grid-items{    width: 100px;}
+.header__item-descr{font-size:14px}
+.header__arrow-row{    bottom: -8px;} 
+.v-table_base__head-cell{    color: #000;  font-size: 20px;}
+.small-icon{    font: italic 17px Arial;}
+.content .crumbs a{  color: #000;
+    font: normal 16px fira_sansregular,sans-serif;}
+	.content .crumbs{    color: #000;  font: 16px fira_sansregular,sans-serif;}
+	.card-table{    font: 17px/1 fira_sansregular,sans-serif;}
+.registration__form label{color:#000;    font: normal 15px fira_sanslight,sans-serif;}
+.text{    font: 17px Arial;}.check-2__label{    color: #000;
+    font: 17px fira_sanslight,sans-serif;}.button{    font: 17px fira_sanslight,sans-serif;}
+	.qtip-default{font-size:14px;}
+	a,.card-table th{color: #000;}.announce__content{    height: 640px;}.jvectormap-container{    background: #fff!important;}
